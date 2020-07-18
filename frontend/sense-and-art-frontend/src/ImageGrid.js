@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, } from 'antd';
+import { Row, Col} from 'antd';
 import Image from './Image';
 import img1 from './testImages/1.png';
 import img2 from './testImages/2.png';
@@ -82,7 +82,7 @@ class ImageGrid extends React.Component {
                 var col1 = this.state.images[i];
                 var col2 = this.state.images[i + 1];
                 imagesToRender.push(
-                    <Row>
+                    <Row className="Row">
                         <Col span={12}>
                             <Image imageToDisplay={col1.image}
                                 title={col1.title}
@@ -95,13 +95,14 @@ class ImageGrid extends React.Component {
                                 artist={col2.artist}
                                 date={col2.date}/>
                         </Col>
-                    </Row>);
+                    </Row>
+                );
             }
 
             if (totalNumOfImages % 2 === 1) {
                 var lastImage = this.state.images[totalNumOfImages - 1];
                 imagesToRender.push(
-                    <Row>
+                    <Row className="Row">
                         <Col span={12}>
                             <Image imageToDisplay={lastImage.image}
                                 title={lastImage.title}

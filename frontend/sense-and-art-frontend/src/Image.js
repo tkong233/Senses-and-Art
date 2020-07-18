@@ -6,6 +6,7 @@ const { Meta } = Card;
 
 class Image extends React.Component {
     render() {
+        var date = this.props.date ? this.props.date : "dates unknown"
         return (
             <Card
                 className="images"
@@ -13,7 +14,7 @@ class Image extends React.Component {
             >
                 <Meta
                 title={this.props.title}
-                description={this.props.artist + " (" + this.props.date + ")"}
+                description={this.props.artist + " (" + date + ")"}
                 />
             </Card>
         )
