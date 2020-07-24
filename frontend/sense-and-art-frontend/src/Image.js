@@ -1,7 +1,8 @@
 import React from 'react';
-import { Card } from 'antd';
+import { Card, Popover, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
+import ImageDescription from './ImageDescription';
 import './Image.css'
 
 const { Meta } = Card;
@@ -15,16 +16,19 @@ class Image extends React.Component {
                     <Card className="images"
                         cover={
                             <img alt={this.props.title}
-                                src={this.props.imageToDisplay}/>
-                        }>
+                                src={this.props.image}/>
+                        }
+                        >
                         <Meta
                         title={this.props.title}
-                        description={this.props.artist + " (" + date + ")"}
+                        description={<ImageDescription {...this.props}/>}
                         />
                     </Card>
                 </Link>
         )
     }
 }
+
+
 
 export default Image;

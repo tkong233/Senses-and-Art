@@ -15,18 +15,10 @@ class ImageGrid extends React.Component {
                 imagesToRender.push(
                     <Row justify="space-between" className="Row">
                         <Col className="Col" span={12}>
-                            <Image id={col1.id}
-                                imageToDisplay={col1.image}
-                                title={col1.title}
-                                artist={col1.artist}
-                                date={col1.date}/>
+                            <Image {...col1}/>
                         </Col>
                         <Col className="Col" span={12}>
-                            <Image id={col2.id}
-                                imageToDisplay={col2.image}
-                                title={col2.title}
-                                artist={col2.artist}
-                                date={col2.date}/>
+                            <Image {...col2}/>
                         </Col>
                     </Row>
                 );
@@ -37,11 +29,7 @@ class ImageGrid extends React.Component {
                 imagesToRender.push(
                     <Row justify="center" className="Row">
                         <Col className="Col" span={12}>
-                            <Image id={lastImage.id}
-                                imageToDisplay={lastImage.image}
-                                title={lastImage.title}
-                                artist={lastImage.artist}
-                                date={lastImage.date}/>
+                            <Image {...lastImage}/>
                         </Col>
                     </Row>
                 )
