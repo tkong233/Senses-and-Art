@@ -1,0 +1,8 @@
+.close-button {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: x-large;
+    color: rgb(54, 53, 53);
+    fill: rgb(54, 53, 53);
+}
