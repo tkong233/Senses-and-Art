@@ -1,6 +1,6 @@
-__pycache__/
-*.py[cod]
-
+*__pycache__*
+*.pyc
+*.DS_Store
 *.so
 
 
