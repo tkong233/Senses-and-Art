@@ -3,9 +3,9 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 // compnents
-import ImageGrid from './ImageGrid';
-import ImageGuide from './ImageGuide';
-import ZoomedImagePage from './ZoomedImagePage';
+import ImageGrid from './ImagePicker/ImageGrid';
+import ImageGuide from './ImagePicker/ImageGuide';
+import ZoomedImagePage from './ImagePicker/ZoomedImagePage';
 
 // css
 import './App.css';

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col} from 'antd';
 import Image from './Image';
+import ImageGuide from './ImageGuide';
 import './ImageGrid.css'
 
 class ImageGrid extends React.Component {
@@ -38,6 +39,7 @@ class ImageGrid extends React.Component {
         
         return (
             <div>
+                <ImageGuide/>
                 {imagesToRender}
             </div>
             
