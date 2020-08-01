@@ -1,25 +1,29 @@
 from flask import request, jsonify
 from time import gmtime, strftime
 
-from senses_art import senses_art_app,db
+from senses_art import senses_art_app, db
 
 from ..models.images import Image
 
-vector = []
+#vector = []
 
-@senses_art_app.route('/images',methods=['GET'])
+
+@senses_art_app.route('/images', methods=['GET'])
 def get_images():
     global vector
     images = Image.query.all()
-    #print(images)
+    # print(images)
     vector = []
+    # print(images[0].date_completed.year)
     for img in images:
-        element = {'image_title': img.image_title,
-        'artist': img.artist,
-        'date_completed': img.date_completed,
-        'image_contributor': img.image_contributor,
-        'image_source': img.image_source,
-        'created_at': img.created_at}
+        element = {
+            'id': img.image_id,
+            'image': img.image_source,
+            'title': img.image_title,
+            'artist': img.artist,
+            'date': img.date_completed,
+            'contributor': img.image_contributor
+        }
         vector.append(element)
-    return jsonify(vector)
-        
+
+    return jsonify({'images': vector})
