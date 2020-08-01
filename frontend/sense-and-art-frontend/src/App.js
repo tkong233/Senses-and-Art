@@ -1,10 +1,10 @@
 // libraries
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import axios from 'axios';
 
 // compnents
 import ImageGrid from './ImagePicker/ImageGrid';
-import ImageGuide from './ImagePicker/ImageGuide';
 import ZoomedImagePage from './ImagePicker/ZoomedImagePage';
 
 // css
@@ -22,6 +22,13 @@ import img7 from './testImages/7.png';
 import img8 from './testImages/8.png';
 
 class App extends React.Component {
+    componentDidMount() {
+        axios.get('localhost:5000/images')
+            .then(response => {
+                console.log(response);
+            });
+    }
+
     state = {
       images : [
           {
