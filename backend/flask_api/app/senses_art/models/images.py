@@ -11,7 +11,7 @@ class Image(db.Model):
     image_source = db.Column(db.String(300), index=True)
     image_title = db.Column(db.String(100), index=True)
     artist = db.Column(db.String(100), index=True)
-    date_completed = db.Column(db.DateTime(), index=True)
+    date_completed = db.Column(db.String(5), index=True)
     image_contributor = db.Column(db.String(100), index=True)
 
     #image_category = db.Column(db.String(50),index=True)
