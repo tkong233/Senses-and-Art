@@ -6,7 +6,7 @@ from flask_cors import CORS
 senses_art_app = Flask(__name__)
 
 db_root ='root'
-db_password = 'mysqldb'
+db_password = 'miguel1205'
 db_name = 'senses_and_art'
 db_host = 'localhost'
 
