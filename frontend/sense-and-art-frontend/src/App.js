@@ -22,13 +22,18 @@ import img7 from './testImages/7.png';
 import img8 from './testImages/8.png';
 
 class App extends React.Component {
+    state = {
+        images:[]
+    }
     componentDidMount() {
-        axios.get('localhost:5000/images')
+        axios.get('http://localhost:5000/images')
             .then(response => {
+                let images = response.data.images;
+                this.setState({images});
                 console.log(response);
             });
     }
-
+/* 
     state = {
       images : [
           {
@@ -95,9 +100,16 @@ class App extends React.Component {
               contributor : "Isabella Stewart Gardner Museum",
           },
       ]
-  }
+  } */
 
     render() {
+        console.log(img1);
+        console.log(img2);
+        console.log(img3);
+        console.log(img4);
+        console.log(img5);
+        console.log(img6);
+        console.log(img7);
       return (
         <div className="App">
           <Router>
