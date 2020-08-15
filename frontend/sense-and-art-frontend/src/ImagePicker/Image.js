@@ -16,7 +16,7 @@ class Image extends React.Component {
                     <Card className="images"
                         cover={
                             <img alt={this.props.title}
-                                src={this.props.image}/>
+                                src={process.env.PUBLIC_URL + this.props.image}/>
                         }
                         >
                         <Meta

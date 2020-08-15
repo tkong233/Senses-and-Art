@@ -33,83 +33,8 @@ class App extends React.Component {
                 console.log(response);
             });
     }
-/* 
-    state = {
-      images : [
-          {
-              id : 0,
-              image : img1,
-              title : "A Tent in the Rockies",
-              artist : "John Singer Sargent",
-              date : "1916",
-              contributor : "Isabella Stewart Gardner Museum",
-          },
-          {
-              id : 1,
-              image : img2,
-              title : "El Jaleo",
-              artist : "John Singer Sargent",
-              date : "1882",
-              contributor : "Isabella Stewart Gardner Museum",
-          },
-          {
-              id : 2,
-              image : img3,
-              title : "Nocturne, Blue and Silver: Battersea Reach",
-              artist : "James McNeil Whistler",
-              date : "",
-              contributor : "Isabella Stewart Gardner Museum",
-          },
-          {
-              id : 3,
-              image : img4,
-              title : "YoYo Falls",
-              artist : "John Singer Sargent",
-              date : "1916",
-              contributor : "Isabella Stewart Gardner Museum",
-          },
-          {
-              id : 4,
-              image : img5,
-              title : "Scenes from the Tale of Genji ",
-              artist : "Kano Tsunenobu",
-              date : "1677"
-          },
-          {
-              id : 5,
-              image : img6,
-              title : "Porpoises",
-              artist : "Charles Herbert Woodbury",
-              date : "1916",
-              contributor : "Isabella Stewart Gardner Museum",
-          },
-          {
-              id : 6,
-              image : img7,
-              title : "The Lido",
-              artist : "Paul H. Tilton",
-              date : "1894",
-              contributor : "Isabella Stewart Gardner Museum",
-          },
-          {
-              id : 7,
-              image : img8,
-              title : "The Terrace, St. Tropez",
-              artist : "Henri Matisse",
-              date : "1904",
-              contributor : "Isabella Stewart Gardner Museum",
-          },
-      ]
-  } */
 
     render() {
-        console.log(img1);
-        console.log(img2);
-        console.log(img3);
-        console.log(img4);
-        console.log(img5);
-        console.log(img6);
-        console.log(img7);
       return (
         <div className="App">
           <Router>
