@@ -23,77 +23,80 @@ import img8 from './testImages/8.png';
 
 class App extends React.Component {
     componentDidMount() {
-        axios.get('localhost:5000/images')
-            .then(response => {
-                console.log(response);
-            });
+        // import img1 from this.state.images[0].image;
+        // this.setState({ image :  img1});
+        // axios.get('localhost:5000/images')
+        //     .then(response => {
+        //         console.log(response);
+        //     });
     }
 
     state = {
       images : [
           {
               id : 0,
-              image : img1,
+            //   image : img1,
+              image: '../public/1.png',
               title : "A Tent in the Rockies",
               artist : "John Singer Sargent",
               date : "1916",
               contributor : "Isabella Stewart Gardner Museum",
           },
-          {
-              id : 1,
-              image : img2,
-              title : "El Jaleo",
-              artist : "John Singer Sargent",
-              date : "1882",
-              contributor : "Isabella Stewart Gardner Museum",
-          },
-          {
-              id : 2,
-              image : img3,
-              title : "Nocturne, Blue and Silver: Battersea Reach",
-              artist : "James McNeil Whistler",
-              date : "",
-              contributor : "Isabella Stewart Gardner Museum",
-          },
-          {
-              id : 3,
-              image : img4,
-              title : "YoYo Falls",
-              artist : "John Singer Sargent",
-              date : "1916",
-              contributor : "Isabella Stewart Gardner Museum",
-          },
-          {
-              id : 4,
-              image : img5,
-              title : "Scenes from the Tale of Genji ",
-              artist : "Kano Tsunenobu",
-              date : "1677"
-          },
-          {
-              id : 5,
-              image : img6,
-              title : "Porpoises",
-              artist : "Charles Herbert Woodbury",
-              date : "1916",
-              contributor : "Isabella Stewart Gardner Museum",
-          },
-          {
-              id : 6,
-              image : img7,
-              title : "The Lido",
-              artist : "Paul H. Tilton",
-              date : "1894",
-              contributor : "Isabella Stewart Gardner Museum",
-          },
-          {
-              id : 7,
-              image : img8,
-              title : "The Terrace, St. Tropez",
-              artist : "Henri Matisse",
-              date : "1904",
-              contributor : "Isabella Stewart Gardner Museum",
-          },
+        //   {
+        //       id : 1,
+        //       image : img2,
+        //       title : "El Jaleo",
+        //       artist : "John Singer Sargent",
+        //       date : "1882",
+        //       contributor : "Isabella Stewart Gardner Museum",
+        //   },
+        //   {
+        //       id : 2,
+        //       image : img3,
+        //       title : "Nocturne, Blue and Silver: Battersea Reach",
+        //       artist : "James McNeil Whistler",
+        //       date : "",
+        //       contributor : "Isabella Stewart Gardner Museum",
+        //   },
+        //   {
+        //       id : 3,
+        //       image : img4,
+        //       title : "YoYo Falls",
+        //       artist : "John Singer Sargent",
+        //       date : "1916",
+        //       contributor : "Isabella Stewart Gardner Museum",
+        //   },
+        //   {
+        //       id : 4,
+        //       image : img5,
+        //       title : "Scenes from the Tale of Genji ",
+        //       artist : "Kano Tsunenobu",
+        //       date : "1677"
+        //   },
+        //   {
+        //       id : 5,
+        //       image : img6,
+        //       title : "Porpoises",
+        //       artist : "Charles Herbert Woodbury",
+        //       date : "1916",
+        //       contributor : "Isabella Stewart Gardner Museum",
+        //   },
+        //   {
+        //       id : 6,
+        //       image : img7,
+        //       title : "The Lido",
+        //       artist : "Paul H. Tilton",
+        //       date : "1894",
+        //       contributor : "Isabella Stewart Gardner Museum",
+        //   },
+        //   {
+        //       id : 7,
+        //       image : img8,
+        //       title : "The Terrace, St. Tropez",
+        //       artist : "Henri Matisse",
+        //       date : "1904",
+        //       contributor : "Isabella Stewart Gardner Museum",
+        //   },
       ]
   }
 
