@@ -4,6 +4,7 @@ import './ZoomedImage.css';
 
 class ZoomedImage extends React.Component {
     componentDidMount() {
+        console.log("====>ZoomedImage")
         console.log(this.props);
     }
 
