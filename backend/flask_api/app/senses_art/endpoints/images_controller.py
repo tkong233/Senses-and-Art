@@ -17,7 +17,7 @@ def get_images():
     # print(images[0].date_completed.year)
     for img in images:
         element = {
-            'id': img.image_id,
+            'id': img.image_id-1,
             'image': img.image_source,
             'title': img.image_title,
             'artist': img.artist,
