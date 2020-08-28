@@ -16,10 +16,10 @@ class ImageGrid extends React.Component {
                 imagesToRender.push(
                     <Row justify="space-between" className="Row">
                         <Col className="Col" span={12}>
-                            <Image {...col1}/>
+                            <Image {...col1} imageSelectEnabled={this.props.imageSelectEnabled}/>
                         </Col>
                         <Col className="Col" span={12}>
-                            <Image {...col2}/>
+                            <Image {...col2} imageSelectEnabled={this.props.imageSelectEnabled}/>
                         </Col>
                     </Row>
                 );
@@ -30,7 +30,7 @@ class ImageGrid extends React.Component {
                 imagesToRender.push(
                     <Row justify="center" className="Row">
                         <Col className="Col" span={12}>
-                            <Image {...lastImage}/>
+                            <Image {...lastImage} imageSelectEnabled={this.props.imageSelectEnabled}/>
                         </Col>
                     </Row>
                 )
