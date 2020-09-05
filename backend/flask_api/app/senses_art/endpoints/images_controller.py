@@ -18,7 +18,7 @@ def get_images():
     for img in images:
         element = {
             'id': img.image_id,
-            'image_path': img.image_source,
+            'image_path': img.image_path,
             'title': img.image_title,
             'artist': img.artist,
             'date': img.date_completed,
