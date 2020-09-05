@@ -4,7 +4,6 @@ import './ZoomedImage.css';
 
 class ZoomedImage extends React.Component {
     componentDidMount() {
-        console.log("====>ZoomedImage")
         console.log(this.props);
     }
 
@@ -13,7 +12,7 @@ class ZoomedImage extends React.Component {
         let imageId = this.props.match.params.imageId;
 
         return (
-            <img className="zoomed-image" src={images[imageId].image} alt="zoomed image"></img>
+            <img className="zoomed-image" src={images[imageId].image_path} alt="zoomed image"></img>
             
         );
     }
