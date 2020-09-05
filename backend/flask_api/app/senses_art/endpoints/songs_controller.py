@@ -15,7 +15,7 @@ def get_songs():
     
     for e in songs:
         element = {
-            'id': e.song_id-1,
+            'id': e.song_id,
             'title': e.song_title,
             'performer': e.song_performer,
             'composer': e.song_composer,
