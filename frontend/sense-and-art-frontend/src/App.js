@@ -143,16 +143,16 @@ class App extends React.Component {
       })
   }
 
-  disableImageSelectHandler() {
-        console.log("image select disabled");
+  toggleImageSelectEnabled() {
+        let curIamgeSelectEnabled = this.state.imageSelectEnabled;
         this.setState({
-            imageSelectEnabled : false
+            imageSelectEnabled : !curIamgeSelectEnabled
         })
   }
 
   onClickSelectButton(id) {
       this.selectImageHandler(id);
-      this.disableImageSelectHandler();
+      this.toggleImageSelectEnabled();
   }
 
     render() {
@@ -164,9 +164,10 @@ class App extends React.Component {
                                                                        image={this.state.images[this.state.selectedImageId]}
                                                                        />}/>
                     <Route path="/" exact render={() => <ImageGrid images={this.state.images}
-                                                                   imageSelectEnabled={this.state.imageSelectEnabled}/>}/>
+                                                                   imageSelectEnabled={true}/>}/>
                     <Route path="/:imageId" render={(props) => <ZoomedImagePage images={this.state.images}
                                                                                 onClickSelectButton={this.onClickSelectButton.bind(this)}
+                                                                                toggleImageSelectEnabled={this.toggleImageSelectEnabled.bind(this)}
                                                                                 // selectImageHandler={this.selectImageHandler.bind(this)}
                                                                                 // disableImageSelectHandler={this.disableImageSelectHandler.bind(this)}
                                                                                 {...props}/>}/>

@@ -5,6 +5,8 @@ import ImageGuide from './ImageGuide';
 import './ImageGrid.css'
 
 class ImageGrid extends React.Component {
+
+
     render() {
         let images = this.props.images;
         let imagesToRender = [];
