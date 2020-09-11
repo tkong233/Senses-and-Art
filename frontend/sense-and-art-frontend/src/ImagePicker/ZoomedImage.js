@@ -10,7 +10,6 @@ class ZoomedImage extends React.Component {
 
         return (
             <img className="zoomed-image" src={image_path} alt="zoomed image"></img>
-            
         );
     }
 }
