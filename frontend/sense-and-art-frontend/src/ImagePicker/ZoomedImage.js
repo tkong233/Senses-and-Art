@@ -3,17 +3,13 @@ import React from 'react';
 import './ZoomedImage.css';
 
 class ZoomedImage extends React.Component {
-    componentDidMount() {
-        console.log(this.props);
-    }
-
     render() {
         let images = this.props.images;
         let imageId = this.props.match.params.imageId;
+        let image_path = images[imageId].image_path
 
         return (
-            <img className="zoomed-image" src={images[imageId].image_path} alt="zoomed image"></img>
-            
+            <img className="zoomed-image" src={image_path} alt="zoomed image"></img>
         );
     }
 }
