@@ -6,7 +6,7 @@ import { PlayCircleOutlined, PauseCircleOutlined} from '@ant-design/icons';
 
 import './reset.css'
 import './defaults.css'
-//import './App.css'
+import './SongPicker.css'
 
 class SongPlayer extends React.Component {
     state = {
@@ -78,7 +78,7 @@ class SongPlayer extends React.Component {
         const { url, playing, controls, played, duration, playbackRate, pip } = this.state
     
         return (
-          <div className='app'>
+          <div className='song-card'>
             <section className='section'>
               <div className='player-wrapper'>
                 <ReactPlayer
@@ -102,16 +102,26 @@ class SongPlayer extends React.Component {
                 />
               </div>
 
-              <button onClick={this.handlePlayPause}>{playing ? 'Pause' : 'Play'}</button>
-              <Duration seconds={duration * played} />
-              <input
+              <button onClick={this.handlePlayPause}
+                      className="song-play-button">
+                      {playing ? 'Pause' : 'Play'}
+              </button>
+
+              <Duration className="song-play-time" 
+                        seconds={duration * played} 
+              />
+
+              <input className="slider"
                   type='range' min={0} max={0.999999} step='any'
                   value={played}
                   onMouseDown={this.handleSeekMouseDown}
                   onChange={this.handleSeekChange}
                   onMouseUp={this.handleSeekMouseUp}
               />
-              <Duration seconds={duration * (1 - played)} />
+
+              <Duration className="song-play-time" 
+                        seconds={duration * (1 - played)} 
+              />
             </section>
           </div>
         )

@@ -7,12 +7,15 @@ class SongCardList extends React.Component {
         // const { id, title, performer, composer, instrument, contributor, song_path } = this.props.songs;
 
         return (
-            songs.map((song) => <SongCard 
+            <div>
+            {songs.map((song) => <SongCard 
                                     title={song.title}
-                                    composer={song.omposer}
+                                    composer={song.composer}
                                     instrument={song.instrument}
                                     song_path={song.song_path}
-                                />)
+                                />)}
+            </div>
+
         )
     }
 }

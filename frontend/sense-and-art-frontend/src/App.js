@@ -169,8 +169,6 @@ class App extends React.Component {
                     <Route path="/:imageId" render={(props) => <ZoomedImagePage images={this.state.images}
                                                                                 onClickSelectButton={this.onClickSelectButton.bind(this)}
                                                                                 toggleImageSelectEnabled={this.toggleImageSelectEnabled.bind(this)}
-                                                                                // selectImageHandler={this.selectImageHandler.bind(this)}
-                                                                                // disableImageSelectHandler={this.disableImageSelectHandler.bind(this)}
                                                                                 {...props}/>}/>
               </Switch>
           </Router>
