@@ -12,9 +12,9 @@ from ..models.images import Image
 def get_images():
     global vector
     images = Image.query.all()
-    # print(images)
+    
     vector = []
-    # print(images[0].date_completed.year)
+    
     for img in images:
         element = {
             'id': img.image_id,
