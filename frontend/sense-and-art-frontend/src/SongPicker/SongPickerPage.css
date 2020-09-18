@@ -14,7 +14,11 @@
 }
 
 .song-play-button {
-    margin-right: 1%;
+    margin: 3px;
+    padding: 6px 12px;
+    border: 0;
+    border-radius: 3px;
+    outline: 0;
 }
 
 .song-play-time {
@@ -23,5 +27,9 @@
 }
 
 .slider {
-    width : 70%;
+    width :65%;
+}
+
+.pagination-bar {
+    margin-top: 3%;
 }

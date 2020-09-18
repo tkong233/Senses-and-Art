@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from 'antd';
-import './SongPicker.css';
 
 class SongCardInfo extends React.Component {
     render() {

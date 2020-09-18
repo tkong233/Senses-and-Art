@@ -4,9 +4,7 @@ import Image from './Image';
 import ImageGuide from './ImageGuide';
 import './ImageGrid.css'
 
-class ImageGrid extends React.Component {
-
-
+class ImageGridPage extends React.Component {
     render() {
         let images = this.props.images;
         let imagesToRender = [];
@@ -40,7 +38,7 @@ class ImageGrid extends React.Component {
         }
         
         return (
-            <div>
+            <div className="page">
                 <ImageGuide/>
                 {imagesToRender}
             </div>
@@ -49,4 +47,4 @@ class ImageGrid extends React.Component {
     }
 }
 
-export default ImageGrid;
+export default ImageGridPage;

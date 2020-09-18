@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import axios from 'axios';
 
 // compnents
-import ImageGrid from './ImagePicker/ImageGrid';
+import ImageGridPage from './ImagePicker/ImageGridPage';
 import ZoomedImagePage from './ImagePicker/ZoomedImagePage';
 import SongPickerPage from './SongPicker/SongPickerPage';
 
@@ -59,7 +59,7 @@ class App extends React.Component {
                 instrument : "Clarinet, Piano",
                 contributor : "Isabella Stewart Gardner Museum",
                 song_path : "/songs/Amazing Grace.mp3"
-            }
+            },
         ],
 
         images : [
@@ -164,7 +164,7 @@ class App extends React.Component {
                     <Route path="/songs" render={() => <SongPickerPage songs={this.state.songs}
                                                                        image={this.state.images[this.state.selectedImageId]}
                                                                        />}/>
-                    <Route path="/" exact render={() => <ImageGrid images={this.state.images}
+                    <Route path="/" exact render={() => <ImageGridPage images={this.state.images}
                                                                    imageSelectEnabled={true}/>}/>
                     <Route path="/:imageId" render={(props) => <ZoomedImagePage images={this.state.images}
                                                                                 onClickSelectButton={this.onClickSelectButton.bind(this)}

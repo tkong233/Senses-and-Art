@@ -7,7 +7,6 @@ import SongCardInfo from './SongCardInfo';
 class SongCard extends React.Component {
     render() {
         const { title, composer, instrument, song_path } = this.props;
-        console.log(this.props);
         return (
             <Card
                 title={<SongCardInfo composer={composer} instrument={instrument}/>}

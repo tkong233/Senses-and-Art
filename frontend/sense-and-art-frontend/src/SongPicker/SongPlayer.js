@@ -4,9 +4,9 @@ import ReactPlayer from 'react-player';
 import Duration from './Duration';
 import { PlayCircleOutlined, PauseCircleOutlined} from '@ant-design/icons';
 
-import './reset.css'
-import './defaults.css'
-import './SongPicker.css'
+// import './reset.css'
+// import './defaults.css'
+import './SongPickerPage.css'
 
 class SongPlayer extends React.Component {
     state = {
@@ -35,12 +35,10 @@ class SongPlayer extends React.Component {
       }
     
       handlePlay = () => {
-        console.log('onPlay')
         this.setState({ playing: true })
       }
     
       handlePause = () => {
-        console.log('onPause')
         this.setState({ playing: false })
       }
     
@@ -58,7 +56,6 @@ class SongPlayer extends React.Component {
       }
     
       handleProgress = state => {
-        console.log('onProgress', state)
         // We only want to update time slider if we are not currently seeking
         if (!this.state.seeking) {
           this.setState(state)
@@ -66,7 +63,6 @@ class SongPlayer extends React.Component {
       }
     
       handleDuration = (duration) => {
-        console.log('onDuration', duration)
         this.setState({ duration })
       }
     
