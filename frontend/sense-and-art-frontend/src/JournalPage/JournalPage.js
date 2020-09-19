@@ -1,4 +1,4 @@
-import {FormControl, InputLabel, Input, FormHelperText,TextField, Container,Grid, Paper} from '@material-ui/core';
+import {FormControl, InputLabel, Input, FormHelperText,TextField, Container,Grid, Paper, Button} from '@material-ui/core';
 import React from 'react';
 import './JournalPage.css';
 import {makeStyles} from '@material-ui/core/styles'
@@ -76,6 +76,14 @@ class JournalPage extends React.Component {
                         </FormControl>
                     </Container>
                 </Grid>
+                <Grid className="form-wrapper" item xs={12}>
+                    <Container className="form-item">
+                        <Button variant="contained" color="primary" href="#contained-buttons">
+                            submit
+                        </Button>
+                    </Container>
+                </Grid>
+
             </Grid>
 
         )
