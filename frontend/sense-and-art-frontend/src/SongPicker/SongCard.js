@@ -13,7 +13,7 @@ class SongCard extends React.Component {
                                      />}
             >
                 <SongPlayer song_path={song_path}/>
-            </Card>        
+            </Card>
         );
     }
 }

@@ -31,7 +31,7 @@ class App extends React.Component {
         imageSelectEnabled : true,
 
         selectedImageId : 0,
-        selectedSongId : null,
+        selectedSongId : 1,
         journal : null,
         songs : [
             {
@@ -212,7 +212,8 @@ class App extends React.Component {
                                                                        />}/>
                     <Route path="/" exact render={() => <ImageGridPage images={this.state.images}
                                                                    imageSelectEnabled={true}/>}/>
-                    <Route path="/meditation" exact render={() => <MeditationPage/>}/>
+                    <Route path="/meditation" exact render={() => <MeditationPage song={this.state.songs[this.state.selectedSongId - 1]}
+                                                                                  image={this.state.images[this.state.selectedImageId]}/>}/>
                     <Route path="/:imageId" render={(props) => <ZoomedImagePage images={this.state.images}
                                                                                 onClickSelectImageButton={this.onClickSelectImageButton.bind(this)}
                                                                                 toggleImageSelectEnabled={this.toggleImageSelectEnabled.bind(this)}
