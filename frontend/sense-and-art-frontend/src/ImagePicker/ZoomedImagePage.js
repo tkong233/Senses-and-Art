@@ -7,7 +7,7 @@ class ZoomedImagePage extends React.Component {
     render() {
         return (
             <div>
-                <SelectImageButton/>
+                <SelectImageButton {...this.props}/>
                 <CloseButton/>
                 <ZoomedImage {...this.props}/>
             </div>
