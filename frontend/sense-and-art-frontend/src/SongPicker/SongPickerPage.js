@@ -16,7 +16,9 @@ class SongPickerPage extends React.Component {
                         </Image>
                     </Col>
                     <Col span={12}>
-                        <SongCardList songs={this.props.songs}/>
+                        <SongCardList songs={this.props.songs}
+                                      onClickSelectSongButton={this.props.onClickSelectSongButton}
+                        />
                     </Col>
                 </Row>
             </div>

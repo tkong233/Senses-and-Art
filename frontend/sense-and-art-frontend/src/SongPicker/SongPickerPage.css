@@ -3,6 +3,9 @@
     font-size: 14px;
     line-height: 1.5715;
 }
+.song-composer {
+    color: rgba(0, 0, 0, 0.65);
+}
 
 .song-select-button {
     font-size: small;

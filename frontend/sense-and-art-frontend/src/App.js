@@ -7,6 +7,7 @@ import axios from 'axios';
 import ImageGridPage from './ImagePicker/ImageGridPage';
 import ZoomedImagePage from './ImagePicker/ZoomedImagePage';
 import SongPickerPage from './SongPicker/SongPickerPage';
+import MeditationPage from './MeditationPage/MeditationPage';
 
 // css
 import './App.css';
@@ -40,6 +41,7 @@ class App extends React.Component {
                 composer : "Johann Sebastian Bach",
                 instrument : "Flute, Harpsichord",
                 contributor : "Isabella Stewart Gardner Museum",
+                song_contributor_url: "",
                 song_path : "/songs/Air on the G String.mp3"
             },
             {
@@ -60,6 +62,43 @@ class App extends React.Component {
                 contributor : "Isabella Stewart Gardner Museum",
                 song_path : "/songs/Amazing Grace.mp3"
             },
+            ,
+            {
+                id : 3,
+                title : "Amazing Grace",
+                performer : "David Deveau, Richard Stoltzman",
+                composer : "John Newton",
+                instrument : "Clarinet, Piano",
+                contributor : "Isabella Stewart Gardner Museum",
+                song_path : "/songs/Amazing Grace.mp3"
+            },
+            {
+                id : 3,
+                title : "Amazing Grace",
+                performer : "David Deveau, Richard Stoltzman",
+                composer : "John Newton",
+                instrument : "Clarinet, Piano",
+                contributor : "Isabella Stewart Gardner Museum",
+                song_path : "/songs/Amazing Grace.mp3"
+            },
+            {
+                id : 3,
+                title : "Amazing Grace",
+                performer : "David Deveau, Richard Stoltzman",
+                composer : "John Newton",
+                instrument : "Clarinet, Piano",
+                contributor : "Isabella Stewart Gardner Museum",
+                song_path : "/songs/Amazing Grace.mp3"
+            },
+            {
+                id : 3,
+                title : "Amazing Grace",
+                performer : "David Deveau, Richard Stoltzman",
+                composer : "John Newton",
+                instrument : "Clarinet, Piano",
+                contributor : "Isabella Stewart Gardner Museum",
+                song_path : "/songs/Amazing Grace.mp3"
+            }
         ],
 
         images : [
@@ -150,9 +189,15 @@ class App extends React.Component {
         })
   }
 
-  onClickSelectButton(id) {
+  onClickSelectImageButton(id) {
       this.selectImageHandler(id);
       this.toggleImageSelectEnabled();
+  }
+
+  onClickSelectSongButton(id) {
+      this.setState({
+          selectedSongId : id
+      })
   }
 
     render() {
@@ -161,13 +206,15 @@ class App extends React.Component {
         <div className="App">
           <Router>
               <Switch>
-                    <Route path="/songs" render={() => <SongPickerPage songs={this.state.songs}
+                    <Route path="/songs" exact render={() => <SongPickerPage songs={this.state.songs}
                                                                        image={this.state.images[this.state.selectedImageId]}
+                                                                       onClickSelectSongButton={this.onClickSelectSongButton.bind(this)}
                                                                        />}/>
                     <Route path="/" exact render={() => <ImageGridPage images={this.state.images}
                                                                    imageSelectEnabled={true}/>}/>
+                    <Route path="/meditation" exact render={() => <MeditationPage/>}/>
                     <Route path="/:imageId" render={(props) => <ZoomedImagePage images={this.state.images}
-                                                                                onClickSelectButton={this.onClickSelectButton.bind(this)}
+                                                                                onClickSelectImageButton={this.onClickSelectImageButton.bind(this)}
                                                                                 toggleImageSelectEnabled={this.toggleImageSelectEnabled.bind(this)}
                                                                                 {...props}/>}/>
               </Switch>
