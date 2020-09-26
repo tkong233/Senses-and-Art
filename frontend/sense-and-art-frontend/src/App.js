@@ -8,6 +8,7 @@ import ImageGridPage from './ImagePicker/ImageGridPage';
 import ZoomedImagePage from './ImagePicker/ZoomedImagePage';
 import SongPickerPage from './SongPicker/SongPickerPage';
 import MeditationPage from './MeditationPage/MeditationPage';
+import SharePage from './SharePage/SharePage';
 
 // css
 import './App.css';
@@ -214,10 +215,11 @@ class App extends React.Component {
                                                                    imageSelectEnabled={true}/>}/>
                     <Route path="/meditation" exact render={() => <MeditationPage song={this.state.songs[this.state.selectedSongId - 1]}
                                                                                   image={this.state.images[this.state.selectedImageId]}/>}/>
+                    <Route path="/share" exact render={() => <SharePage/>}/>
                     <Route path="/:imageId" render={(props) => <ZoomedImagePage images={this.state.images}
                                                                                 onClickSelectImageButton={this.onClickSelectImageButton.bind(this)}
                                                                                 toggleImageSelectEnabled={this.toggleImageSelectEnabled.bind(this)}
-                                                                                {...props}/>}/>
+                                                                          {...props}/>}/>
               </Switch>
           </Router>
         </div>
