@@ -29,21 +29,16 @@ def get_users():
         ii+=1
 
         vector.append(element)
-    print([u.user_to_json() for u in users], flush=True)
+    
     return jsonify({'users': vector})
 
 
 @senses_art_app.route('/user_send',methods=['POST'])
 def post_user():
-    #print(request.json,flush=True)
+    
     if not request.json or not 'user_name' in request.json:
         abort(400)
     
-    ## se puede cargar el ultimo id
-    tam_users = len(User.query.all())
-    print(tam_users,flush=True)
-    #user_id = tam_users+1
-
     user_name = request.json['user_name']
     song_id = request.json['song_id']
     image_id = request.json['image_id']
@@ -52,9 +47,11 @@ def post_user():
     is_public = request.json['is_public']
 
     user = User(user_name,song_id,image_id,journal,location,is_public)
-    #print(user.user_to_json(),flush=True)
+    
     db.session.add(user)
     db.session.commit()
-    #print(dict(user))
-    #print(jsonify({'user':user.user_to_json()}),flush=True)
-    return jsonify({"user":user.user_to_json()})
+    
+    ## find size users
+    User.user_id = User.query.count()
+    
+    return jsonify({"user":user.to_json()})
