@@ -7,6 +7,8 @@ import axios from 'axios';
 import ImageGrid from './ImagePicker/ImageGrid';
 import ZoomedImagePage from './ImagePicker/ZoomedImagePage';
 import SongPickerPage from './SongPicker/SongPickerPage';
+// import MeditationPage from './MeditationPage/MeditationPage';
+// import SharePage from './SharePage/SharePage';
 import JournalPage from './JournalPage/JournalPage';
 
 // css
@@ -167,10 +169,11 @@ class App extends React.Component {
                                                                        />}/>
                     <Route path="/" exact render={() => <ImageGrid images={this.state.images}
                                                                    imageSelectEnabled={true}/>}/>
-                    <Route path="/journal" exact render={() => 
-                        <JournalPage 
-                            musicSrc={this.state.songs[0].song_path}
-                            imagePath={this.state.images[0].image_path}></JournalPage>}/>
+                    {/* <Route path="/meditation" exact render={() => <MeditationPage song={this.state.songs[this.state.selectedSongId - 1]} */}
+                                                                                  {/* image={this.state.images[this.state.selectedImageId]}/>}/> */}
+                    <Route path="/share" exact render={() => <JournalPage image={this.state.images[this.state.selectedImageId]}
+                                                                          song={this.state.songs[this.state.selectedSongId - 1]}
+                                                    />}/>
                     <Route path="/:imageId" render={(props) => <ZoomedImagePage images={this.state.images}
                                                                                 onClickSelectButton={this.onClickSelectButton.bind(this)}
                                                                                 toggleImageSelectEnabled={this.toggleImageSelectEnabled.bind(this)}
