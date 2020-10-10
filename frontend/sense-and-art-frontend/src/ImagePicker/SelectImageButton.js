@@ -10,7 +10,7 @@ class SelectImageButton extends React.Component {
 
         return(
             <Link to={'/songs'}>
-                <Button onClick={() => this.props.onClickSelectButton(imageId)}
+                <Button onClick={() => this.props.onClickSelectImageButton(imageId)}
                         className="select-image-button" type="default">Select</Button>
             </Link>
         );

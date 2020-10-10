@@ -9,7 +9,6 @@ const { Meta } = Card;
 
 class Image extends React.Component {
     render() {
-        
         let id = this.props.id;
         let title = this.props.title;
         let image_path = this.props.image_path;
