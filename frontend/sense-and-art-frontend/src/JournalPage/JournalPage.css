@@ -1,4 +1,4 @@
-/* .height-50{
+.height-50{
     height: 50px;
 }
 .height-150{
@@ -22,4 +22,8 @@
 }
 .blank-row{
     height: 100px;
-} */
+}
+.left-half{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, Button, Checkbox,InputNumber } from 'antd';
+import { Form, Input, Button, Checkbox } from 'antd';
 import LocationSearchInput from './LocationSearchInput';
 class JournalForm extends React.Component {
     render() {

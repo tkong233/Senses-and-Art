@@ -9,9 +9,9 @@ class JournalPage extends React.Component {
         const {song, image} = this.props;
         return (
         <Row>
-            <Col span={2} className={`height-${200}`}>
+            <Col span={3} className={`height-${200}`}>
             </Col>
-            <Col span={8}>
+            <Col span={9} className='left-half'>
                 <Row >
                     <Col className={`song-box` } span={24}><Song {...song}></Song></Col>
                 </Row>
