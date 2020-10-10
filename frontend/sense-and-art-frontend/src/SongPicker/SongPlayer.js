@@ -4,9 +4,9 @@ import ReactPlayer from 'react-player';
 import Duration from './Duration';
 import { PlayCircleOutlined, PauseCircleOutlined} from '@ant-design/icons';
 
-import './reset.css'
-import './defaults.css'
-//import './App.css'
+// import './reset.css'
+// import './defaults.css'
+import './SongPickerPage.css'
 
 class SongPlayer extends React.Component {
     state = {
@@ -35,12 +35,10 @@ class SongPlayer extends React.Component {
       }
     
       handlePlay = () => {
-        console.log('onPlay')
         this.setState({ playing: true })
       }
     
       handlePause = () => {
-        console.log('onPause')
         this.setState({ playing: false })
       }
     
@@ -58,7 +56,6 @@ class SongPlayer extends React.Component {
       }
     
       handleProgress = state => {
-        console.log('onProgress', state)
         // We only want to update time slider if we are not currently seeking
         if (!this.state.seeking) {
           this.setState(state)
@@ -66,7 +63,6 @@ class SongPlayer extends React.Component {
       }
     
       handleDuration = (duration) => {
-        console.log('onDuration', duration)
         this.setState({ duration })
       }
     
@@ -78,7 +74,7 @@ class SongPlayer extends React.Component {
         const { url, playing, controls, played, duration, playbackRate, pip } = this.state
     
         return (
-          <div className='app'>
+          <div className='song-card'>
             <section className='section'>
               <div className='player-wrapper'>
                 <ReactPlayer
@@ -102,16 +98,26 @@ class SongPlayer extends React.Component {
                 />
               </div>
 
-              <button onClick={this.handlePlayPause}>{playing ? 'Pause' : 'Play'}</button>
-              <Duration seconds={duration * played} />
-              <input
+              <button onClick={this.handlePlayPause}
+                      className="song-play-button">
+                      {playing ? 'Pause' : 'Play'}
+              </button>
+
+              <Duration className="song-play-time" 
+                        seconds={duration * played} 
+              />
+
+              <input className="slider"
                   type='range' min={0} max={0.999999} step='any'
                   value={played}
                   onMouseDown={this.handleSeekMouseDown}
                   onChange={this.handleSeekChange}
                   onMouseUp={this.handleSeekMouseUp}
               />
-              <Duration seconds={duration * (1 - played)} />
+
+              <Duration className="song-play-time" 
+                        seconds={duration * (1 - played)} 
+              />
             </section>
           </div>
         )
