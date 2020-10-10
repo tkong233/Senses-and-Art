@@ -3,12 +3,22 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import axios from 'axios';
 
+import Map1 from './MapExamples/ReactMapGl';
+
 // compnents
 import ImageGridPage from './ImagePicker/ImageGridPage';
 import ZoomedImagePage from './ImagePicker/ZoomedImagePage';
 import SongPickerPage from './SongPicker/SongPickerPage';
 import MeditationPage from './MeditationPage/MeditationPage';
 import SharePage from './SharePage/SharePage';
+
+
+// layout
+import NavBar from './Layout/NavBar';
+import SideBar from './Layout/SideBar';
+import Footer from './Layout/Footer';
+import Line from './Layout/Line';
+import { Layout} from 'antd'; 
 
 // css
 import './App.css';
@@ -205,23 +215,36 @@ class App extends React.Component {
     
       return (
         <div className="App">
-          <Router>
-              <Switch>
-                    <Route path="/songs" exact render={() => <SongPickerPage songs={this.state.songs}
-                                                                       image={this.state.images[this.state.selectedImageId]}
-                                                                       onClickSelectSongButton={this.onClickSelectSongButton.bind(this)}
-                                                                       />}/>
-                    <Route path="/" exact render={() => <ImageGridPage images={this.state.images}
-                                                                   imageSelectEnabled={true}/>}/>
-                    <Route path="/meditation" exact render={() => <MeditationPage song={this.state.songs[this.state.selectedSongId - 1]}
-                                                                                  image={this.state.images[this.state.selectedImageId]}/>}/>
-                    <Route path="/share" exact render={() => <SharePage/>}/>
-                    <Route path="/:imageId" render={(props) => <ZoomedImagePage images={this.state.images}
-                                                                                onClickSelectImageButton={this.onClickSelectImageButton.bind(this)}
-                                                                                toggleImageSelectEnabled={this.toggleImageSelectEnabled.bind(this)}
-                                                                          {...props}/>}/>
-              </Switch>
-          </Router>
+        <Layout>
+            <Router>
+            <Line height="10px" color="#C75E94"/>
+                <NavBar/>
+                <Layout>
+                    <SideBar/>
+                    <Switch className="main">
+                            <Route path="/map1" exact render={() => <Map1/>}/>
+                            <Route path="/songs" exact render={() => <SongPickerPage songs={this.state.songs}
+                                                                            image={this.state.images[this.state.selectedImageId]}
+                                                                            onClickSelectSongButton={this.onClickSelectSongButton.bind(this)}
+                                                                            />}/>
+                            <Route path="/" exact render={() => <ImageGridPage images={this.state.images}
+                                                                        imageSelectEnabled={true}/>}/>
+                            <Route path="/meditation" exact render={() => <MeditationPage song={this.state.songs[this.state.selectedSongId - 1]}
+                                                                                        image={this.state.images[this.state.selectedImageId]}/>}/>
+                            <Route path="/share" exact render={() => <SharePage/>}/>
+                            <Route path="/:imageId" render={(props) => <ZoomedImagePage images={this.state.images}
+                                                                                        onClickSelectImageButton={this.onClickSelectImageButton.bind(this)}
+                                                                                        toggleImageSelectEnabled={this.toggleImageSelectEnabled.bind(this)}
+                                                                                {...props}/>}/>
+                    </Switch>
+                </Layout>
+            </Router>
+          <Line height="10px" color="white"/>
+          <Line height="10px" color="#EFBB40"/>
+          <Line height="5px" color="white"/>
+          <Line height="10px" color="#C75E94"/>
+          <Footer/>
+          </Layout>
         </div>
       );
     }

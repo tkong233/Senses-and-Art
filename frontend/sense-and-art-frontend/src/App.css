@@ -11,5 +11,6 @@ html, body {
 }
 
 .page {
-    margin : 3%;
+    margin: 3%;
+    width: 100%;
 }
