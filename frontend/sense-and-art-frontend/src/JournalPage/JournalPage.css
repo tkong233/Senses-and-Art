@@ -21,9 +21,12 @@
     padding: 10px 10px;
 }
 .blank-row{
-    height: 100px;
+    height: 20%;
 }
 .left-half{
     padding-top: 10px;
     padding-bottom: 10px;
+}
+.location-search-input{
+    width: 100%;
 }

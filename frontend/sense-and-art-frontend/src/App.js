@@ -218,8 +218,8 @@ class App extends React.Component {
                                                                    imageSelectEnabled={true}/>}/>
                     {/* <Route path="/meditation" exact render={() => <MeditationPage song={this.state.songs[this.state.selectedSongId - 1]} */}
                                                                                   {/* image={this.state.images[this.state.selectedImageId]}/>}/> */}
-                    <Route path="/share" exact render={() => <JournalPage image={this.state.images[this.state.selectedImageId]}
-                                                                          song={this.state.songs[this.state.selectedSongId - 1]}
+                    <Route path="/share" exact render={() => <JournalPage image={this.state.images[1]}
+                                                                          song={this.state.songs[2]}
                                                     />}/>
                     <Route path="/meditation" exact render={() => <MeditationPage song={this.state.songs[this.state.selectedSongId - 1]}
                                                                                   image={this.state.images[this.state.selectedImageId]}/>}/>

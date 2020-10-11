@@ -4,7 +4,7 @@ import PlacesAutocomplete, {
   getLatLng,
 } from 'react-places-autocomplete';
 
-class LocationSearchInput extends React.Component {
+class AutoCompleteInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = { address: '' };
@@ -12,7 +12,6 @@ class LocationSearchInput extends React.Component {
 
   handleChange = address => {
     this.setState({ address });
-    this.props.handleLocation(address);
   };
 
   handleSelect = address => {
@@ -34,7 +33,7 @@ class LocationSearchInput extends React.Component {
             <input
               {...getInputProps({
                 placeholder: 'Search Places ...',
-                className: 'location-search-input ant-input',
+                className: 'location-search-input',
               })}
             />
             <div className="autocomplete-dropdown-container">
@@ -65,4 +64,3 @@ class LocationSearchInput extends React.Component {
     );
   }
 }
-export default LocationSearchInput;

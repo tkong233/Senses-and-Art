@@ -2,24 +2,42 @@ import React from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
 import LocationSearchInput from './LocationSearchInput';
 class JournalForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {'location':'','firstname':'','journal':''};
+  }
+    handleLocation = address => {
+      
+      this.setState({'location':address})
+    }
     render() {
+        const {song_id,image_id} = this.props;
         const layout = {
-          labelCol: { span: 8 },
-          wrapperCol: { span: 16 },
+          labelCol: { span: 4 },
+          wrapperCol: { span: 20 },
         };
         const tailLayout = {
           wrapperCol: {
-            offset: 3,
-            span: 16,
+            span: 11,
+            
           },
         }
         const onFinish = (values) => {
-            console.log('Success:', values);
-          };
-        
-        const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
+            
+          console.log([{
+            'song_id':song_id,
+            'image_id':image_id,
+            'location':this.state.location,
+            'journal':values.user.journal,
+            'user_name': values.user.anonymous ? 'anonymous': values.user.name,
+            'is_public': true
+          }])
+          // console.log('Success:', this.state,values);
         };
+        
+        // const onFinishFailed = (errorInfo) => {
+        //   console.log('Failed:', errorInfo);
+        // };
         const validateMessages = {
           required: '${label} is required!',
           types: {
@@ -36,24 +54,24 @@ class JournalForm extends React.Component {
                 <Form.Item name={['user', 'name']} label="First Name" rules={[{ required: true }]}>
                   <Input />
                 </Form.Item>
-                <Form.Item {...tailLayout} name="remember" valuePropName="checked">
+                <Form.Item {...tailLayout} name={['user', 'anonymous']} valuePropName="checked">
                   <Checkbox>Anonymous</Checkbox>
                 </Form.Item>
 
-                <Form.Item name={['user', 'email']} label="Location" rules={[{ type: 'Location',required: true }]}>
-                  <Input />
+                <Form.Item label="Location" >
+                  <LocationSearchInput handleLocation={ this.handleLocation }></LocationSearchInput>
                 </Form.Item>
 
-                <Form.Item name={['user', 'introduction']} label="How you feel">
+                <Form.Item name={['user', 'journal']} label="How you feel">
                   <Input.TextArea />
                 </Form.Item>
-                <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
+                <Form.Item wrapperCol={{ span:10, offset: 8 }}>
                   <Button type="primary" htmlType="submit">
                     Submit
                   </Button>
                 </Form.Item>
               </Form>
-              <LocationSearchInput></LocationSearchInput>
+              
             </div>
         );
     }

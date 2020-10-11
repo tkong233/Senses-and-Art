@@ -9,23 +9,24 @@ class JournalPage extends React.Component {
         const {song, image} = this.props;
         return (
         <Row>
-            <Col span={3} className={`height-${200}`}>
+            <Col span={4} className={`height-${200}`}>
             </Col>
-            <Col span={9} className='left-half'>
-                <Row >
-                    <Col className={`song-box` } span={24}><Song {...song}></Song></Col>
-                </Row>
+            <Col span={8} className='left-half'>
                 <Row >
                     <Col className={`image-box` } span={24}><Image className="image-box" {...image}></Image></Col>
                 </Row>
+                <Row >
+                    <Col className={`song-box` } span={24}><Song {...song}></Song></Col>
+                </Row>
+
             </Col>
-            <Col span={2}></Col>
-            <Col span={8} className="journal-form">
+
+            <Col span={11} className="journal-form">
                 <Row className='blank-row'>
 
                 </Row>
                 <Row >
-                    <Col span={24}><JournalForm></JournalForm></Col>
+                    <Col span={24}><JournalForm song_id={song.id} image_id={image.id}></JournalForm></Col>
                 </Row>
             </Col>
         </Row>)
