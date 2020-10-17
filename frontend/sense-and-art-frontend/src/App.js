@@ -3,10 +3,22 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import axios from 'axios';
 
+import Map1 from './MapExamples/ReactMapGl';
+
 // compnents
-import ImageGrid from './ImagePicker/ImageGrid';
+import ImageGridPage from './ImagePicker/ImageGridPage';
 import ZoomedImagePage from './ImagePicker/ZoomedImagePage';
 import SongPickerPage from './SongPicker/SongPickerPage';
+import MeditationPage from './MeditationPage/MeditationPage';
+import SharePage from './SharePage/SharePage';
+
+
+// layout
+import NavBar from './Layout/NavBar';
+import SideBar from './Layout/SideBar';
+import Footer from './Layout/Footer';
+import Line from './Layout/Line';
+import { Layout} from 'antd'; 
 
 // css
 import './App.css';
@@ -30,7 +42,7 @@ class App extends React.Component {
         imageSelectEnabled : true,
 
         selectedImageId : 0,
-        selectedSongId : null,
+        selectedSongId : 1,
         journal : null,
         songs : [
             {
@@ -40,6 +52,7 @@ class App extends React.Component {
                 composer : "Johann Sebastian Bach",
                 instrument : "Flute, Harpsichord",
                 contributor : "Isabella Stewart Gardner Museum",
+                song_contributor_url: "",
                 song_path : "/songs/Air on the G String.mp3"
             },
             {
@@ -50,6 +63,43 @@ class App extends React.Component {
                 instrument : "Guitar",
                 contributor : "Tomas Vallejo",
                 song_path : "/songs/Alone.wav"
+            },
+            {
+                id : 3,
+                title : "Amazing Grace",
+                performer : "David Deveau, Richard Stoltzman",
+                composer : "John Newton",
+                instrument : "Clarinet, Piano",
+                contributor : "Isabella Stewart Gardner Museum",
+                song_path : "/songs/Amazing Grace.mp3"
+            },
+            ,
+            {
+                id : 3,
+                title : "Amazing Grace",
+                performer : "David Deveau, Richard Stoltzman",
+                composer : "John Newton",
+                instrument : "Clarinet, Piano",
+                contributor : "Isabella Stewart Gardner Museum",
+                song_path : "/songs/Amazing Grace.mp3"
+            },
+            {
+                id : 3,
+                title : "Amazing Grace",
+                performer : "David Deveau, Richard Stoltzman",
+                composer : "John Newton",
+                instrument : "Clarinet, Piano",
+                contributor : "Isabella Stewart Gardner Museum",
+                song_path : "/songs/Amazing Grace.mp3"
+            },
+            {
+                id : 3,
+                title : "Amazing Grace",
+                performer : "David Deveau, Richard Stoltzman",
+                composer : "John Newton",
+                instrument : "Clarinet, Piano",
+                contributor : "Isabella Stewart Gardner Museum",
+                song_path : "/songs/Amazing Grace.mp3"
             },
             {
                 id : 3,
@@ -150,30 +200,51 @@ class App extends React.Component {
         })
   }
 
-  onClickSelectButton(id) {
+  onClickSelectImageButton(id) {
       this.selectImageHandler(id);
       this.toggleImageSelectEnabled();
+  }
+
+  onClickSelectSongButton(id) {
+      this.setState({
+          selectedSongId : id
+      })
   }
 
     render() {
     
       return (
         <div className="App">
-          <Router>
-              <Switch>
-                    <Route path="/songs" render={() => <SongPickerPage songs={this.state.songs}
-                                                                       image={this.state.images[this.state.selectedImageId]}
-                                                                       />}/>
-                    <Route path="/" exact render={() => <ImageGrid images={this.state.images}
-                                                                   imageSelectEnabled={true}/>}/>
-                    <Route path="/:imageId" render={(props) => <ZoomedImagePage images={this.state.images}
-                                                                                onClickSelectButton={this.onClickSelectButton.bind(this)}
-                                                                                toggleImageSelectEnabled={this.toggleImageSelectEnabled.bind(this)}
-                                                                                // selectImageHandler={this.selectImageHandler.bind(this)}
-                                                                                // disableImageSelectHandler={this.disableImageSelectHandler.bind(this)}
+        <Layout>
+            <Router>
+            <Line height="10px" color="#C75E94"/>
+                <NavBar/>
+                <Layout>
+                    <SideBar/>
+                    <Switch className="main">
+                            <Route path="/map1" exact render={() => <Map1/>}/>
+                            <Route path="/songs" exact render={() => <SongPickerPage songs={this.state.songs}
+                                                                            image={this.state.images[this.state.selectedImageId]}
+                                                                            onClickSelectSongButton={this.onClickSelectSongButton.bind(this)}
+                                                                            />}/>
+                            <Route path="/" exact render={() => <ImageGridPage images={this.state.images}
+                                                                        imageSelectEnabled={true}/>}/>
+                            <Route path="/meditation" exact render={() => <MeditationPage song={this.state.songs[this.state.selectedSongId - 1]}
+                                                                                        image={this.state.images[this.state.selectedImageId]}/>}/>
+                            <Route path="/share" exact render={() => <SharePage/>}/>
+                            <Route path="/:imageId" render={(props) => <ZoomedImagePage images={this.state.images}
+                                                                                        onClickSelectImageButton={this.onClickSelectImageButton.bind(this)}
+                                                                                        toggleImageSelectEnabled={this.toggleImageSelectEnabled.bind(this)}
                                                                                 {...props}/>}/>
-              </Switch>
-          </Router>
+                    </Switch>
+                </Layout>
+            </Router>
+          <Line height="10px" color="white"/>
+          <Line height="10px" color="#EFBB40"/>
+          <Line height="5px" color="white"/>
+          <Line height="10px" color="#C75E94"/>
+          <Footer/>
+          </Layout>
         </div>
       );
     }

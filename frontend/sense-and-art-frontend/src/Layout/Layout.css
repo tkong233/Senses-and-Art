@@ -1,0 +1,36 @@
+.pink-line {
+    width: 100%;
+    height: 10px;
+    background-color: #C75E94;
+}
+
+.orange-line {
+    width: 100%;
+    height: 10px;
+    background-color: #EFBB40;
+}
+
+.white-line {
+    width: 100%;
+    height: 10px;
+    background-color: white;
+}
+
+.nav-bar-item {
+    display: flex;
+    float: right;
+    font-size: large;
+    font-weight: 700;
+}
+
+#side-bar {
+    background-color: #F4D473;
+    border-right: 10px solid white;
+}
+
+.footer {
+    height: 200px;
+    width: 100%;
+    background-color: #F0BB6D;
+    border: 8px solid white;
+}

@@ -1,14 +1,19 @@
 import React from 'react';
-import SongPlayer from './SongPlayer';
 import { Card } from 'antd';
+
+import SongPlayer from './SongPlayer';
+import SongCardInfo from './SongCardInfo';
 
 class SongCard extends React.Component {
     render() {
-        const { title, composer, instrument, song_path } = this.props;
+        const { id, title, composer, instrument, song_path } = this.props;
         return (
-            <Card title={title}>
+            <Card
+                title={<SongCardInfo {...this.props}
+                                     />}
+            >
                 <SongPlayer song_path={song_path}/>
-            </Card>        
+            </Card>
         );
     }
 }
