@@ -24,7 +24,7 @@ URL: `https://localhost:5000/images`
 
 ##### Return Json:
 
-`
+```
 {
   "images": [
     {
@@ -38,7 +38,7 @@ URL: `https://localhost:5000/images`
    ]
 }
 
-`
+```
 
 ### Function `get_songs`
 
@@ -46,7 +46,7 @@ URL: `https://localhost:5000/songs`
 
 ##### Return Json:
 
-`
+```
 {
   "songs": [
     {
@@ -60,7 +60,7 @@ URL: `https://localhost:5000/songs`
     }
    ]
 }
-`
+```
 
 ### Function `get_users`
 
@@ -68,7 +68,7 @@ URL: `https://localhost:5000/users`
 
 ##### Return Json:
 
-`
+```
 {
   "users": [
     {
@@ -83,7 +83,7 @@ URL: `https://localhost:5000/users`
    ]
 }
 
-`
+```
 
 ## Methods `POST`
 -----
@@ -94,7 +94,7 @@ URL: `https://localhost:5000/user_send`
 
 ##### Send Json:
 
-`
+```
 {
             "user_name": "Juan Ramos",
             "song_id": 2,
@@ -103,11 +103,11 @@ URL: `https://localhost:5000/user_send`
             "location": "Silicon Valley, USA",
             "is_public": true
         }
-`
+```
 
 ##### Return Json:
 
-`
+```
 {
     "user": {
         "image_id": 2,
@@ -119,5 +119,5 @@ URL: `https://localhost:5000/user_send`
     }
 }
 
-`
+```
 
