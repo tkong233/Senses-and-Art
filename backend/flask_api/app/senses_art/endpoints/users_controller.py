@@ -52,6 +52,6 @@ def post_user():
     db.session.commit()
     
     ## find size users
-    User.user_id = User.query.count()
+    #User.user_id = User.query.count()
     
     return jsonify({"user":user.to_json()})

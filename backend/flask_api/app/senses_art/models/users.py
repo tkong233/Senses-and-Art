@@ -25,7 +25,6 @@ class User(db.Model):
     
     def to_json(self):
         element = {
-            'user_id': self.user_id,
             'user_name': self.user_name,
             'song_id': self.song_id,
             'image_id': self.image_id,
