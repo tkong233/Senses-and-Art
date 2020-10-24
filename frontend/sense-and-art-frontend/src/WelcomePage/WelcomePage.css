@@ -1,0 +1,25 @@
+.main {
+    height: 80vh;
+    width: 100%;
+    font-size: large;
+    padding-top: 5vh;
+    padding-left: 8vh;
+    padding-right: 8vh;
+}
+
+h1 {
+
+}
+
+p {
+    font-size: x-large;
+    font-weight: 400;
+}
+
+#button {
+    font-size: large;
+}
+
+.explore-button {
+    padding: 5vh;
+}

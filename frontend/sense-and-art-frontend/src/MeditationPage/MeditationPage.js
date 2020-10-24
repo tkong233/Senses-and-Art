@@ -1,6 +1,7 @@
 import React from 'react';
 import SongCard from '../SongPicker/SongCard';
 import Image from '../ImagePicker/Image';
+import { Button } from 'antd';
 import './MeditationPage.css'
 
 class MeditationPage extends React.Component {
@@ -8,7 +9,11 @@ class MeditationPage extends React.Component {
         return (
             <div className="page">
                 <Image {...this.props.image}/>
-                <SongCard {...this.props.song}/>
+                <SongCard songSelectEnabled={false}
+                          {...this.props.song}/>
+                <Button href='/map'>
+                    Next
+                </Button>
             </div>
         )
     }

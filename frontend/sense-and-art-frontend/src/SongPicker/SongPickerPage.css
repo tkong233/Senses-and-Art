@@ -12,6 +12,12 @@
     margin-right: 2%;
 }
 
+#description-popup {
+    font-size: medium;
+    color: rgba(0, 0, 0, 0.65);
+    margin-left: 10px
+}
+
 .song-card {
     text-align: left;
 }

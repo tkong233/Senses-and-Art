@@ -5,9 +5,10 @@ class ImageGuide extends React.Component {
     render() {
         return (
             <div className="Guide-box">
-                <p> This of a place you would love to visit. </p>
-                <p> It could be a real place or an imaginary place or one you've heard of but never seen. </p>
-                <p> Or choose a piece of art that speaks to you. </p>
+                <p> When you find a work meaningful, be patient. </p>
+                <p> Your memories and feelings may be hidden. </p>
+                <p> You are an observer and a participant. </p>
+                <p> Something in your life story is calling. </p>
             </div>
         );
     }

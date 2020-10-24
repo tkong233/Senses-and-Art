@@ -3,14 +3,15 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import axios from 'axios';
 
-import Map1 from './MapExamples/ReactMapGl';
 
 // compnents
+import WelcomePage from './WelcomePage/WelcomePage';
 import ImageGridPage from './ImagePicker/ImageGridPage';
 import ZoomedImagePage from './ImagePicker/ZoomedImagePage';
 import SongPickerPage from './SongPicker/SongPickerPage';
 import MeditationPage from './MeditationPage/MeditationPage';
 import SharePage from './SharePage/SharePage';
+import MapPage from './MapPage/MapPage';
 
 
 // layout
@@ -222,12 +223,13 @@ class App extends React.Component {
                 <Layout>
                     <SideBar/>
                     <Switch className="main">
-                            <Route path="/map1" exact render={() => <Map1/>}/>
+                            <Route path="/" exact render={() => <WelcomePage/>}/>
+                            <Route path="/map" exact render={() => <MapPage/>}/>
                             <Route path="/songs" exact render={() => <SongPickerPage songs={this.state.songs}
                                                                             image={this.state.images[this.state.selectedImageId]}
                                                                             onClickSelectSongButton={this.onClickSelectSongButton.bind(this)}
                                                                             />}/>
-                            <Route path="/" exact render={() => <ImageGridPage images={this.state.images}
+                            <Route path="/images" exact render={() => <ImageGridPage images={this.state.images}
                                                                         imageSelectEnabled={true}/>}/>
                             <Route path="/meditation" exact render={() => <MeditationPage song={this.state.songs[this.state.selectedSongId - 1]}
                                                                                         image={this.state.images[this.state.selectedImageId]}/>}/>
