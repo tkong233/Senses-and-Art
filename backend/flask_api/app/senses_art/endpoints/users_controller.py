@@ -3,7 +3,7 @@ from senses_art import senses_art_app, db
 from ..models.users import User
 from ..models.songs import Song
 from ..models.images import Image
-
+import requests
 import sys
 
 import json
@@ -55,3 +55,28 @@ def post_user():
     #User.user_id = User.query.count()
     
     return jsonify({"user":user.to_json()})
+
+
+@senses_art_app.route('/user_location',methods=['POST'])
+def post_coordinates():
+
+    # APP ID: 0hj3rJpGmOUtgkVtxM4A
+    # API key: VWQdcLSVaWYGXALEri-Liqp-PXeOkVRbYHM2hVupNf4
+
+
+    URL = "https://geocode.search.hereapi.com/v1/geocode"
+    location = input("Ingresar la ubicación: ") 
+    api_key = 'VWQdcLSVaWYGXALEri-Liqp-PXeOkVRbYHM2hVupNf4' 
+    PARAMS = {'apikey':api_key,'q':location} 
+
+    # sending get request and saving the response as response object 
+    r = requests.get(url = URL, params = PARAMS) 
+    data = r.json()
+
+    latitude = data['items'][0]['position']['lat']
+    longitude = data['items'][0]['position']['lng']
+
+    print(latitude)
+    print(longitude)
+
+
