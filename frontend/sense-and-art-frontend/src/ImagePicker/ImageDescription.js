@@ -10,8 +10,8 @@ class ImageDescription extends React.Component {
 
         return(
             <div>
-                <p class="description-text">{this.props.artist + " (" + date + ")"}</p>
-                <Popover class="description-popup" content={contributor} ><InfoCircleOutlined /></Popover>
+                <p className="description-text">{this.props.artist + " (" + date + ")"}</p>
+                <Popover content={contributor} ><InfoCircleOutlined id="description-popup"/></Popover>
             </div>
         );
     }

@@ -11,7 +11,7 @@ class SelectSongButton extends React.Component {
         return(
             <Link to={'/meditation'}>
                 <Button onClick={() => this.props.onClickSelectSongButton(songId)}
-                        className="song-select-button"
+                        id="song-select-button"
                         type="default">
                     Select
                 </Button>

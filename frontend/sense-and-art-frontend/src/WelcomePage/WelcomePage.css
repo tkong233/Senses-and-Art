@@ -1,0 +1,39 @@
+.main {
+    height: 100%;
+    width: 100%;
+    font-size: large;
+    padding-top: 5vh;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+h1 {
+    font-size: x-large;
+}
+
+p {
+    font-size: x-large;
+    font-weight: 400;
+}
+
+.image {
+    height: 500px;
+    padding-top: 50px;
+}
+
+#button {
+    font-size: large;
+    line-height: revert;
+    /* background-color: #f3cc72; */
+}
+
+#button:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+    /* #ecb025 */
+}
+
+.explore-button {
+    padding: 5vh;
+    text-align: center;   
+}
