@@ -32,6 +32,8 @@ CREATE TABLE `images` (
   `image_contributor` varchar(100) NOT NULL,
   `image_category` varchar(50) NOT NULL,
   `image_path` varchar(50) DEFAULT NULL,
+  `image_contributor_url` varchar(200) DEFAULT NULL,
+  `image_url` varchar(200) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`image_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -43,7 +45,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
-INSERT INTO `images` VALUES (0,'A Tent in the Rockies','John Singer Sargent','1916','Isabella Stewart Gardner Museum','','/images/1.png','2020-08-01 03:51:36'),(1,'El Jaleo','John Singer Sargent','1882','Isabella Stewart Gardner Museum','','/images/2.png','2020-08-01 03:51:41'),(2,'Nocturne, Blue and Silver: Battersea Reach','James McNeil Whistler','1916','Isabella Stewart Gardner Museum','','/images/3.png','2020-08-01 03:51:51'),(3,'YoYo Falls','John Singer Sargent','1916','Isabella Stewart Gardner Museum','','/images/4.png','2020-08-01 03:51:59'),(4,'Scenes from the Tale of Genji','Kano Tsunenobu','1677','','','/images/5.png','2020-08-01 03:52:05'),(5,'Porpoises','Charles Herbert Woodbury','1916','Isabella Stewart Gardner Museum','','/images/6.png','2020-08-01 03:52:10'),(6,'The Lido','Paul H. Tilton','1894','Isabella Stewart Gardner Museum','','/images/7.png','2020-08-01 03:52:15'),(7,'The Terrace, St. Tropez','Henri Matisse','1904','Isabella Stewart Gardner Museum','','/images/8.png','2020-08-01 03:52:24');
+INSERT INTO `images` VALUES (0,'A Tent in the Rockies','John Singer Sargent','1916','Isabella Stewart Gardner Museum','','/images/1.png',NULL,NULL,'2020-08-01 03:51:36'),(1,'El Jaleo','John Singer Sargent','1882','Isabella Stewart Gardner Museum','','/images/2.png',NULL,NULL,'2020-08-01 03:51:41'),(2,'Nocturne, Blue and Silver: Battersea Reach','James McNeil Whistler','1916','Isabella Stewart Gardner Museum','','/images/3.png',NULL,NULL,'2020-08-01 03:51:51'),(3,'YoYo Falls','John Singer Sargent','1916','Isabella Stewart Gardner Museum','','/images/4.png',NULL,NULL,'2020-08-01 03:51:59'),(4,'Scenes from the Tale of Genji','Kano Tsunenobu','1677','','','/images/5.png',NULL,NULL,'2020-08-01 03:52:05'),(5,'Porpoises','Charles Herbert Woodbury','1916','Isabella Stewart Gardner Museum','','/images/6.png',NULL,NULL,'2020-08-01 03:52:10'),(6,'The Lido','Paul H. Tilton','1894','Isabella Stewart Gardner Museum','','/images/7.png',NULL,NULL,'2020-08-01 03:52:15'),(7,'The Terrace, St. Tropez','Henri Matisse','1904','Isabella Stewart Gardner Museum','','/images/8.png',NULL,NULL,'2020-08-01 03:52:24');
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-09-18  0:53:51
+-- Dump completed on 2020-10-30 23:38:18
