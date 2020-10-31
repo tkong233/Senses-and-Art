@@ -33,6 +33,7 @@ class SongCardList extends React.Component {
                                         />
                 ).slice((this.state.currentPage - 1) * pageSize, this.state.currentPage * pageSize)}
                 <Pagination className="pagination-bar"
+                            id="pagination-bar"
                             defaultCurrent={1}
                             pageSize={pageSize}
                             total={totalSongs}

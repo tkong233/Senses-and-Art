@@ -8,12 +8,20 @@ class MeditationPage extends React.Component {
     render() {
         return (
             <div className="page">
-                <Image {...this.props.image}/>
-                <SongCard songSelectEnabled={false}
-                          {...this.props.song}/>
-                <Button href='/map'>
-                    Next
-                </Button>
+                <div className='image-div'>
+                    <Image {...this.props.image}/>
+                </div>
+                
+                <div className='song-div'>
+                    <SongCard songSelectEnabled={false}
+                            {...this.props.song}/>
+                </div>
+
+                <div className='button-div'>
+                    <Button id='button' href='/map'>
+                        Next
+                    </Button>
+                </div>
             </div>
         )
     }

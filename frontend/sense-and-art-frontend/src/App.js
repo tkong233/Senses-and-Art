@@ -114,6 +114,7 @@ class App extends React.Component {
         ],
 
         images : [
+            // image_path = id + 1
             {
                 id : 0,
                 image_path : '/images/1.png',

@@ -18,8 +18,8 @@ class MapPage extends React.Component {
                 {...this.state.viewport}
                 width="100vw"
                 height="100vh"
-                mapStyle={MAP_STYLE}
-                // mapStyle="mapbox://styles/mapbox/light-v9"
+                // mapStyle={MAP_STYLE}
+                mapStyle="mapbox://styles/mapbox/light-v9"
                 // mapStyle="mapbox://styles/mapbox/dark-v9"
                 onViewportChange={viewport => this.setState({viewport})}
             />
