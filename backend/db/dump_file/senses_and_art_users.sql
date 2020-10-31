@@ -27,18 +27,19 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `user_id` int NOT NULL AUTO_INCREMENT,
   `user_name` varchar(100) DEFAULT NULL,
-  `can_share_journal` tinyint(1) DEFAULT NULL,
   `song_id` int DEFAULT NULL,
   `image_id` int DEFAULT NULL,
   `journal` varchar(500) NOT NULL,
   `location` varchar(100) NOT NULL,
   `is_public` tinyint(1) DEFAULT NULL,
+  `longitude` double DEFAULT NULL,
+  `latitude` double DEFAULT NULL,
   PRIMARY KEY (`user_id`),
   KEY `fk_song` (`song_id`),
   KEY `fk_image` (`image_id`),
   CONSTRAINT `fk_image` FOREIGN KEY (`image_id`) REFERENCES `images` (`image_id`),
   CONSTRAINT `fk_song` FOREIGN KEY (`song_id`) REFERENCES `songs` (`song_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,6 +48,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Pep Guardiola',1,2,'This is a prove of the journal','Tangamandapio, Perú',0,NULL,NULL),(2,'Ricardo Gareca',3,4,'This is a prove of the journal too','Silicon Valley, USA',0,NULL,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +61,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-09-18  0:53:51
+-- Dump completed on 2020-10-30 23:38:18

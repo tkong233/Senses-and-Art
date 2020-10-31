@@ -12,8 +12,9 @@ class Song(db.Model):
     song_instrument = db.Column(db.String(100),index=True)
     song_contributor = db.Column(db.String(100),index=True)
     song_path = db.Column(db.String(300),index=True)
+    song_contributor_url = db.Column(db.String(200),index=True)
 
-    def __init__(self, song_id, song_title, song_performer, song_composer, song_instrument, song_contributor, song_path):
+    def __init__(self, song_id, song_title, song_performer, song_composer, song_instrument, song_contributor, song_path,song_contributor_url):
         self.song_id = song_id
         self.song_title = song_title
         self.song_performer = song_performer
@@ -21,4 +22,4 @@ class Song(db.Model):
         self.song_instrument = song_instrument
         self.song_contributor = song_contributor
         self.song_path = song_path
-
+        self.song_contributor_url = song_contributor_url
