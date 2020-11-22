@@ -3,12 +3,14 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 #import pymysql
 
+from .setting_app import param_db_root, param_db_password,param_db_name, param_db_host
+
 senses_art_app = Flask(__name__)
 
-db_root ='root'
-db_password = 'mysqldb'
-db_name = 'senses_and_art'
-db_host = 'localhost'
+db_root =param_db_root
+db_password = param_db_password
+db_name = param_db_name
+db_host = param_db_host
 
 #db = pymysql.connect(db_host,db_root,db_password,db_name)
 r = 'mysql://'+db_root+':'+db_password+'@'+db_host+'/'+db_name
