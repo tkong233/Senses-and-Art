@@ -15,7 +15,7 @@ run: `python run.py`
 
 ## Setting params to conect
 
-parameters to connect with the DB:
+parameters to connect with the DB in `setting_app.py`:
 
 ```Python
 param_db_root='root'
