@@ -3,10 +3,10 @@ from senses_art import senses_art_app, db
 from ..models.users import User
 from ..models.songs import Song
 from ..models.images import Image
+from ..setting_app import param_apikey_geocode_1
+
 
 import requests
-
-#import sys
 
 import json
 
@@ -58,9 +58,6 @@ def post_user():
     db.session.add(user)
     db.session.commit()
     
-    ## find size users
-    #User.user_id = User.query.count()
-    
     return jsonify({"user":user.to_json()})
     
 
@@ -68,8 +65,7 @@ def post_user():
 def find_coordinates(self):
     
     URL = "https://geocode.search.hereapi.com/v1/geocode"
-    api_key = 'VWQdcLSVaWYGXALEri-Liqp-PXeOkVRbYHM2hVupNf4' 
-    #api_key = '_0oZKD9VJm6BnPSBwmUa-flJbsYmaBae27OSruyIZ9I'
+    api_key =  param_apikey_geocode_1
     PARAMS = {'apikey':api_key,'q':self} 
     r = requests.get(url=URL,params=PARAMS)
     data = r.json()
