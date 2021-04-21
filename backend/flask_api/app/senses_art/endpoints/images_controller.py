@@ -5,9 +5,6 @@ from senses_art import senses_art_app, db
 
 from ..models.images import Image
 
-#vector = []
-
-
 @senses_art_app.route('/images', methods=['GET'])
 def get_images():
     global vector

@@ -1,4 +1,8 @@
 # backend flask app
+
+
+
+
 -------
 
 ## Installation
@@ -8,6 +12,17 @@ use: `pip install -r requirements.txt`
 ## Execute
 -----
 run: `python run.py`
+
+## Setting params to conect
+
+parameters to connect with the DB in `setting_app.py`:
+
+```Python
+param_db_root='root'
+param_db_password='mysqldb'
+param_db_name ='senses_and_art'
+param_db_host = 'localhost'
+```
 
 ## API
 -----
@@ -120,4 +135,6 @@ URL: `https://localhost:5000/user_send`
 }
 
 ```
+
+
 

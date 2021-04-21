@@ -3,5 +3,5 @@
 *.DS_Store
 *.so
 
-
+./app/senses_art/setting_app.py
 

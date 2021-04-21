@@ -1,8 +1,7 @@
 import datetime
 from senses_art import db
-from flask import Flask, request, jsonify
-from sqlalchemy import Date
-#import pymysql
+#from flask import Flask, request, jsonify
+#from sqlalchemy import Date
 
 
 class Image(db.Model):
@@ -15,9 +14,6 @@ class Image(db.Model):
     image_contributor = db.Column(db.String(100), index=True)
     image_contributor_url = db.Column(db.String(200),index=True)
 
-    #image_category = db.Column(db.String(50),index=True)
-    #created_at = db.Column(db.DateTime(),index=True)
-
     def __init__(self, image_id, image_path, image_title, artist, date_completed, image_contributor,image_contributor_url):
         self.image_id = image_id
         self.image_path = image_path
@@ -26,5 +22,3 @@ class Image(db.Model):
         self.date_completed = date_completed
         self.image_contributor = image_title
         self.image_contributor_url = image_contributor_url
-        #self.image_category = image_category
-        #self.created_at = created_at

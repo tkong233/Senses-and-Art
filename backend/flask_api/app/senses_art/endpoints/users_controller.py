@@ -3,8 +3,10 @@ from senses_art import senses_art_app, db
 from ..models.users import User
 from ..models.songs import Song
 from ..models.images import Image
+from ..setting_app import param_apikey_geocode_1
+
+
 import requests
-import sys
 
 import json
 
@@ -24,6 +26,8 @@ def get_users():
             'image_id': e.image_id,
             'journal': e.journal,
             'location': e.location,
+            'longitude':e.longitude,
+            'latitude':e.latitude,
             'is_public':e.is_public
         }
         ii+=1
@@ -44,39 +48,29 @@ def post_user():
     image_id = request.json['image_id']
     journal = request.json['journal']
     location = request.json['location']
+    
+    latitude,longitude = find_coordinates(location)
+    
     is_public = request.json['is_public']
 
-    user = User(user_name,song_id,image_id,journal,location,is_public)
+    user = User(user_name=user_name,song_id=song_id,image_id=image_id,journal=journal,location=location,is_public=is_public,longitude=longitude,latitude=latitude)
     
     db.session.add(user)
     db.session.commit()
     
-    ## find size users
-    #User.user_id = User.query.count()
-    
     return jsonify({"user":user.to_json()})
+    
 
 
-@senses_art_app.route('/user_location',methods=['POST'])
-def post_coordinates():
-
-    # APP ID: 0hj3rJpGmOUtgkVtxM4A
-    # API key: VWQdcLSVaWYGXALEri-Liqp-PXeOkVRbYHM2hVupNf4
-
-
+def find_coordinates(self):
+    
     URL = "https://geocode.search.hereapi.com/v1/geocode"
-    location = input("Ingresar la ubicación: ") 
-    api_key = 'VWQdcLSVaWYGXALEri-Liqp-PXeOkVRbYHM2hVupNf4' 
-    PARAMS = {'apikey':api_key,'q':location} 
-
-    # sending get request and saving the response as response object 
-    r = requests.get(url = URL, params = PARAMS) 
+    api_key =  param_apikey_geocode_1
+    PARAMS = {'apikey':api_key,'q':self} 
+    r = requests.get(url=URL,params=PARAMS)
     data = r.json()
 
     latitude = data['items'][0]['position']['lat']
     longitude = data['items'][0]['position']['lng']
 
-    print(latitude)
-    print(longitude)
-
-
+    return latitude,longitude
