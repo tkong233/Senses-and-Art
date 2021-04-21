@@ -6,8 +6,8 @@ import './CloseButton.css';
 class CloseButton extends React.Component {
     render() {
         return (
-            <Link to="/">
-                <CloseOutlined className="close-button"/>
+            <Link to="/images">
+                <CloseOutlined id="close-button"/>
             </Link>
         );
     }

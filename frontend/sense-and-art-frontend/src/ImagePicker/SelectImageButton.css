@@ -1,4 +1,9 @@
-.select-image-button {
-    font-size: x-large;
+#select-image-button {
+    /* font-size: x-large; */
      margin-bottom: 3%;
+}
+
+#select-image-button:hover {
+    color: #ecb025;
+    border-color: #ecb025;
 }

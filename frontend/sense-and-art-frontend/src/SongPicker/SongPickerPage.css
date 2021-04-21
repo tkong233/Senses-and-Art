@@ -7,9 +7,20 @@
     color: rgba(0, 0, 0, 0.65);
 }
 
-.song-select-button {
-    font-size: small;
+#song-select-button {
     margin-right: 2%;
+    line-height: revert;
+}
+
+#song-select-button:hover {
+    color: #ecb025;
+    border-color: #ecb025;
+}
+
+#description-popup {
+    font-size: medium;
+    color: rgba(0, 0, 0, 0.65);
+    margin-left: 10px
 }
 
 .song-card {
@@ -33,6 +44,58 @@
     width :65%;
 }
 
+/*Chrome*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+      overflow: hidden;
+      width: 70%;
+      -webkit-appearance: none;
+      background-color: #d6d6d6e0;
+    }
+    
+    input[type='range']::-webkit-slider-runnable-track {
+      height: 10px;
+      /* -webkit-appearance: none; */
+      /* color: #000000; */
+      /* #e2cf7c */
+      margin-top: -1px;
+    }
+    
+    input[type='range']::-webkit-slider-thumb {
+      width: 10px;
+      -webkit-appearance: none;
+      height: 12px;
+      cursor: grab;
+      background: #e2cf7c;
+      /* box-shadow: -80px 0 0 80px #e2cf7c; */
+    }
+
+}
+/** FF*/
+input[type="range"]::-moz-range-progress {
+  background-color:  #d6d6d6e0; 
+}
+input[type="range"]::-moz-range-track {  
+  background-color:  #d6d6d6e0;
+}
+/* IE*/
+input[type="range"]::-ms-fill-lower {
+  background-color: #d6d6d6e0; 
+}
+input[type="range"]::-ms-fill-upper {  
+  background-color:  #d6d6d6e0;
+}
+
 .pagination-bar {
     margin-top: 3%;
+}
+
+#pagination-bar:hover {
+    color: #ecb025;
+    border-color: #ecb025;
+}
+
+button:hover {
+    color: #ecb025;
+    border-color: #ecb025; 
 }
